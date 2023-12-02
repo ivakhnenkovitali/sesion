@@ -12,12 +12,19 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compilet.source>1.8</maven.compilet.source>
         <maven.compilet.target>1.8</maven.compilet.target>
-
     </properties>
 
+
+
+
+
     <dependencies>
-
-
+        <!-- https://mvnrepository.com/artifact/javax.servlet/javax.servlet-api -->
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>javax.servlet-api</artifactId>
+            <version>4.0.1</version>
+        </dependency>
 
 
     </dependencies>
@@ -27,14 +34,18 @@
 
         <finalName>session</finalName>
         <plugins>
-            <plugin>
+            <plugin>    <!-- https://mvnrepository.com/artifact/org.eclipse.jetty/jetty-server -->
                 <groupId>org.eclipse.jetty</groupId>
                 <artifactId>jetty-maven-plugin</artifactId>
                 <version>9.4.53.v20231009</version>
-            </plugin>
+            </plugin><plugin><groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-compiler-plugin</artifactId>
+            <configuration>
+                <source>6</source>
+                <target>6</target>
+            </configuration>
+        </plugin>
         </plugins>
-
-
 
 
     </build>
