@@ -16,9 +16,9 @@ public class MessageController extends HttpServlet {
     }
 
     @Override
-    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws IOException {
      HttpSession session = req.getSession();
-   String sessionMessage = (String) req.getAttribute( "sessionMessage");
+   String sessionMessage = (String) session.getAttribute( "sessionMessage");
    String requestMessage = (String) req.getAttribute( "requestMessage");
    resp.getWriter()
            .append("Session message: " + sessionMessage + "\n")
